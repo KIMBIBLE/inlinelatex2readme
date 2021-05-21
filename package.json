@@ -10,16 +10,25 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:inlinelatex2readme.helloWorld"
+    "onCommand:inlinelatex2readme.convertMDSnippet"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "inlinelatex2readme.helloWorld",
-        "title": "Hello World"
+        "command": "inlinelatex2readme.convertMDSnippet",
+        "title": "Convert Latex Formular To Markdown Snippet"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "inlinelatex2readme.convertMDSnippet",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
