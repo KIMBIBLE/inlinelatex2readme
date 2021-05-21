@@ -1,7 +1,7 @@
 {
   "name": "inlinelatex2readme",
-  "displayName": "InlineLatex2Readme",
-  "description": "This project generates an inline snippet to render mathematical formulas with latex syntax when writing a Github README file.",
+  "displayName": "inlinelatex2readme",
+  "description": "This VSCode Extension project generates an inline snippet to render mathematical formulas",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.56.0"
@@ -10,25 +10,16 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:inlinelatex2readme.convertLatexSnippet"
+    "onCommand:inlinelatex2readme.helloWorld"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "inlinelatex2readme.convertLatexSnippet",
-        "title": "Generate Markdown Snippet"
+        "command": "inlinelatex2readme.helloWorld",
+        "title": "Hello World"
       }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "testapp.mdSnippet",
-          "when": "editorHasSelection",
-          "group": "navigation"
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
