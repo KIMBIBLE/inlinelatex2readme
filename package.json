@@ -2,6 +2,7 @@
   "name": "inlinelatex2readme",
   "displayName": "inlinelatex2readme",
   "description": "This VSCode Extension project generates an inline snippet to render mathematical formulas",
+  "publisher": "bbkim",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.56.0"
@@ -50,5 +51,10 @@
     "mocha": "^8.2.1",
     "typescript": "^4.1.3",
     "vscode-test": "^1.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KIMBIBLE/inlinelatex2readme.git"
+  },
+  "homepage": "https://github.com/KIMBIBLE/inlinelatex2readme/blob/main/README.md"
 }
