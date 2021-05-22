@@ -27,16 +27,14 @@
 
 </br>`inlinelatex2readme` solves this problem by utilizing `Google Chart API` that [supports TeX language](https://developers.google.com/chart/infographics/docs/formulas) and [user defined text/background color](https://developers.google.com/chart/image/docs/chart_params). This extension properly encodes the text selected by the user and converts it into an `html tag` snippet as shown in the following example.
 
-* Example Fomular 1: <!-- E = mc^2 -->
-<img src="https://chart.apis.google.com/chart?cht=tx&chl=E%5C%20%3D%5C%20mc%5E2" />
+* Example Fomular 1: <!-- E = mc^2 --> <img src="https://chart.apis.google.com/chart?cht=tx&chl=E%5C%20%3D%5C%20mc%5E2" />
 
     ```html
     <!-- E = mc^2 -->
     <img src="https://chart.apis.google.com/chart?cht=tx&chl=E%5C%20%3D%5C%20mc%5E2" />
     ```
 
-* Example Fomular 2: <!-- a \equiv r \bmod c -->
-<img src="https://chart.apis.google.com/chart?cht=tx&chl=a%5C%20%5Cequiv%5C%20r%5C%20%5Cbmod%5C%20c" />
+* Example Fomular 2: <!-- a \equiv r \bmod c --> <img src="https://chart.apis.google.com/chart?cht=tx&chl=a%5C%20%5Cequiv%5C%20r%5C%20%5Cbmod%5C%20c" />
 
     ```html
     <!-- a \equiv r \bmod c -->
