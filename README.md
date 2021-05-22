@@ -1,70 +1,57 @@
-# inlinelatex2readme README
+# inlinelatex2readme
 
-This is the README for your extension "inlinelatex2readme". After writing up a brief description, we recommend including the following sections.
+> Convert Latex Fomular to Inline Snippet for Github Readme File.
 
-## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+<br/>
 
-For example if there is an image subfolder under your extension project workspace:
+## :pencil2: Usage
+---
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Inline fomular로 변환하고 싶은 latex 코드를 선택하세요.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+2. 선택한 블록을 대상으로 마우스 오른쪽 버튼을 클릭했을 때, 보이는 드롭다운 메뉴들 중 xxx를 선택하세요.
 
-## Requirements
+3. 다음과 같이 변환이 완료됩니다.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+</br><p align="center"><img src="./gif/demo_record.gif" /></p>
 
-## Extension Settings
+<br/>
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 🌱&ensp; How Does the Plugin Works?
+---
 
-For example:
 
-This extension contributes the following settings:
+<br/>[Github/markup]()는 현재 Inline equation을 공식적으로 지원하고 있지 않습니다. 따라서 이 플러그인은 사용자가 Github README 파일을 작성할 때, 수학 공식을 Inline 형태로 편리하게 삽입할 수 있도록 도움을 주기 위해 제작되었습니다. 
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+현 시점에서, Github README 파일에 Inline Formular를 삽입하는 다양한 방법(`render.githubusercontent.com`을 활용, `readme2tex` 등의 프로젝트)들이 있습니다. 하지만 이러한 방법들은 background color 없는 검은색 text color 형태로 렌더링(<img src="https://render.githubusercontent.com/render/math?math=e^{i +\pi} =x+1">)되기 때문에 Github Dark-mode에서는 가독성이 떨어지는 단점이 있습니다.
 
-## Known Issues
+`inlinelatex2readme`는 이와 같은 문제를 TeX language와 user defined text/background color을 지원하는 Google Chart API를 활용하여 해결합니다. 이 Extension은 사용자가 선택한 text를 적절히 인코딩하여, 다음의 예시와 같이 html tag 형태의 snippet으로 변환합니다.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* Example Fomular 1: <!-- E = mc^2 -->
+<img src="https://chart.apis.google.com/chart?cht=tx&chl=E%5C%20%3D%5C%20mc%5E2" />
 
-## Release Notes
+    ```html
+    <!-- E = mc^2 -->
+    <img src="https://chart.apis.google.com/chart?cht=tx&chl=E%5C%20%3D%5C%20mc%5E2" />
+    ```
 
-Users appreciate release notes as you update your extension.
+* Example Fomular 2: <!-- a \equiv r \bmod c -->
+<img src="https://chart.apis.google.com/chart?cht=tx&chl=a%5C%20%5Cequiv%5C%20r%5C%20%5Cbmod%5C%20c" />
 
-### 1.0.0
+    ```html
+    <!-- a \equiv r \bmod c -->
+    <img src="https://chart.apis.google.com/chart?cht=tx&chl=a%5C%20%5Cequiv%5C%20r%5C%20%5Cbmod%5C%20c" />
+    ```
 
-Initial release of ...
 
-### 1.0.1
+<br/>
 
-Fixed issue #.
+## :hourglass_flowing_sand: Release Notes
+---
 
-### 1.1.0
+### 0.0.1
 
-Added features X, Y, and Z.
+Initial release of inline latex snippet generator for github readme file.
 
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
