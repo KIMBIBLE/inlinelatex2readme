@@ -1,4 +1,4 @@
-bbbb# inlinelatex2readme
+# inlinelatex2readme
 
 > Convert Latex Fomular to Inline Snippet for Github Readme File.
 
