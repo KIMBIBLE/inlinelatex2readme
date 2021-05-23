@@ -23,6 +23,7 @@ export class SnippetGenerator {
     public generate() {
         this.encodeTextToURIFomat();
         let convertedFomularSnippet = `<img src="${SnippetGenerator.googleChartAPIURL}?cht=tx&chl=${this._encodedFomular}" />`;
+        console.log(convertedFomularSnippet);
 
         return convertedFomularSnippet;
     }
