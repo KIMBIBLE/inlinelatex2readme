@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import {SnippetGenerator} from './snippetGenerator';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -16,10 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('inlinelatex2readme.convertMDSnippet', () => {
 		// The code you place here will be executed every time your command is executed
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from inlinelatex2readme!');
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {
+			// Display a message box to the user
 			vscode.window.showInformationMessage('Cannot find any editor. Please open file first.');
 			return;
 		}
@@ -30,22 +30,9 @@ export function activate(context: vscode.ExtensionContext) {
 		const range = new vscode.Range(selectionStart, selectionEnd);
 		const selectedText = editor.document.getText(range);
 
-
-		const whitespaceChars = [' ', '\t', '\n'];
-		let fomular: string = selectedText;
-		let encodedFomular = ' ';
-
-		for (let ch of fomular) {
-			if (whitespaceChars.includes(ch)) {
-				encodedFomular += encodeURIComponent('\\');
-			}
-
-			encodedFomular += encodeURIComponent(ch);
-		}
-
-		let convertedFomularSnippet = `<img src="https://chart.apis.google.com/chart?cht=tx&chl=${encodedFomular}" />`;
-		let textToReplace = `<!-- ${fomular} -->\n` + convertedFomularSnippet;
-		editor.edit(edit => edit.replace(range, textToReplace));
+		const snippetGenerator = new SnippetGenerator(selectedText);
+		const fomularSnippet = snippetGenerator.generate();
+		editor.edit(edit => edit.replace(range, fomularSnippet));
 	});
 
 	context.subscriptions.push(disposable);
