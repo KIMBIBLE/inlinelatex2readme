@@ -5,7 +5,7 @@
 
 <br/>
 
-## :pencil2: Usage
+## ✏️&ensp; Usage
 ---
 
 1. Select the latex code block which you want to convert to inline fomular.
@@ -44,7 +44,7 @@
 
 <br/>
 
-## :hourglass_flowing_sand: Release Notes
+## ⏳&ensp; Release Notes
 ---
 
 ### 0.1.x
