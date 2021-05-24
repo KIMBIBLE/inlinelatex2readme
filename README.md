@@ -47,8 +47,16 @@
 ## :hourglass_flowing_sand: Release Notes
 ---
 
-### 0.0.1
+### 0.1.x
 
-Initial release of inline latex snippet generator for github readme file.
+* `0.1.2`: Created a Github Action CI/CD pipeline for continuous deployment to the vscode extension marketplace.
 
+* `0.1.1`: Add Unit Test Logic.
+
+* `0.1.0`
+  * Fix bug for [Issue #1](https://github.com/KIMBIBLE/inlinelatex2readme/issues/1): An unwanted newline character is included in the generated inline formula link snippet.
+
+### 0.0.x
+
+* `0.0.1`: Initial release of inline latex snippet generator for github readme file.
 
