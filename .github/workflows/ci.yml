@@ -81,20 +81,7 @@ jobs:
       
       - name: Packaging
         run: vsce package
-        
-      - name: Publish to VSCode Marketplace
-        if: github.ref == 'refs/heads/main'
-        run: vsce publish -p ${{ secrets.VSCE_PAT }}
-
-      - name: create a release
-        if: github.ref == 'refs/heads/main'
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-        with:
-          tag_name: v${{ steps.gitversion.outputs.semVer }}
-          release_name: v${{ steps.gitversion.outputs.semVer }}
-          
+              
   publish:
     needs: build_with_test
     # The type of runner that the job will run on
