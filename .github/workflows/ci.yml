@@ -6,9 +6,14 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
+      
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
+      - develop    
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,14 +41,37 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      - name: Install the dependencies
+      - name: install gitversion tools
+        uses: gittools/actions/gitversion/setup@v0.9
+        with:
+          versionSpec: '5.1.x'
+        
+      - name: execute gitversion
+        id: gitversion # step id used as reference for output values
+        uses: gittools/actions/gitversion/execute@v0.9
+        
+      - name: print gitversion
+        run: |
+          echo "Major: ${{ steps.gitversion.outputs.major }}"
+          echo "Minor: ${{ steps.gitversion.outputs.minor }}"
+          echo "Patch: ${{ steps.gitversion.outputs.patch }}"
+          echo "MajorMinorPatch: ${{ steps.gitversion.outputs.MajorMinorPatch }}"
+          echo "SemVer: ${{ steps.gitversion.outputs.semvVer }}"
+          
+      - name: Clean Install the dependencies
         run: npm ci
 
       - name: Install vsce
         run: npm i -g vsce
         
-      - name: Test
+      - name: Testing
         run: xvfb-run -a npm test
+        
+      - name: Code coverage
+        run: codecov/codecov-actino@v1
         
       - name: Packaging
         run: vsce package
+        
+#      - name: Publish to VSCode Marketplace
+#        run: vsce publish -p ${{ secrets.VSCE_PAT }}
