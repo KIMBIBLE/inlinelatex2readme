@@ -10,7 +10,7 @@
 
 1. Select the latex code block which you want to convert to inline fomular.
 
-2. `Right-click` on the selected block and select `Generate Markdown Snippet` from the drop-down menus that appear.
+2. `Right-click` on the selected block and select `Convert Latex Formular To Markdown Snippet` from the drop-down menus that appear.
 
 3. Conversion is completed as follows.
 
