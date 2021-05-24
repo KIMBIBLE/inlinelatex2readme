@@ -37,10 +37,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Install the dependencies
-        run: npm i
+        run: npm ci
 
       - name: Install vsce
         run: npm i -g vsce
         
-      - name: Test and Packaging
+      - name: Test
+        run: xvfb-run -a npm test
+        
+      - name: Packaging
         run: vsce package
