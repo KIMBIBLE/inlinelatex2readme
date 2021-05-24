@@ -40,7 +40,7 @@ jobs:
         run: npm i
 
       - name: Install vsce
-        uses: npm i -g vsce@latest
+        uses: npm i -g vsce
         
       - name: Publish to Visual Studio Marketplace
         run: vsce publish -p ${{ secrets.VSCE_PAT }}
