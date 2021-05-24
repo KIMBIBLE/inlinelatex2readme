@@ -67,11 +67,30 @@ jobs:
       - name: Install vsce
         run: npm i -g vsce
         
+      - name: update metadata in package.json
+        uses: onlyutkarsh/patch-files-action@v1.0.1
+        with:
+          files: '${{github.workspace}}/package.json'
+          patch-syntax: |
+            = /version => "${{ steps.gitversion.outputs.semVer }}"
+            = /displayName => "inlinelatex2readme"
+      
+        
       - name: Testing
         run: xvfb-run -a npm test
       
       - name: Packaging
         run: vsce package
         
-#      - name: Publish to VSCode Marketplace
-#        run: vsce publish -p ${{ secrets.VSCE_PAT }}
+      - name: Publish to VSCode Marketplace
+        if: github.ref == 'refs/heads/main
+        run: vsce publish -p ${{ secrets.VSCE_PAT }}
+
+      - name: create a release
+        if: github.ref == 'refs/heads/main'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: v${{ steps.gitversion.outputs.semVer }}
+          release_name: v${{ steps.gitversion.outputs.semVer }}
