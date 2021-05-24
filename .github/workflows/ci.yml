@@ -42,6 +42,8 @@ jobs:
       - name: Install vsce
         run: npm i -g vsce
         
-      - name: Publish to Visual Studio Marketplace
-        run: vsce publish -p ${{ secrets.VSCE_PAT }}
-        
+#      - name: Publish to Visual Studio Marketplace
+#        run: vsce publish -p ${{ secrets.VSCE_PAT }}
+      
+      - name: Run test
+        run: npm test
