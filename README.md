@@ -1,6 +1,6 @@
 # inlinelatex2readme
 
-[![CI](https://github.com/KIMBIBLE/inlinelatex2readme/actions/workflows/ci.yml/badge.svg)](https://github.com/KIMBIBLE/inlinelatex2readme/actions/workflows/ci.yml) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/KIMBIBLE/inlinelatex2readme/CI) [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bbkim.inlinelatex2readme)](https://marketplace.visualstudio.com/items?itemName=bbkim.inlinelatex2readme)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/KIMBIBLE/inlinelatex2readme/CI) [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bbkim.inlinelatex2readme)](https://marketplace.visualstudio.com/items?itemName=bbkim.inlinelatex2readme)
 
 > Convert Latex Fomular to Inline Snippet for Github Readme File.
 
