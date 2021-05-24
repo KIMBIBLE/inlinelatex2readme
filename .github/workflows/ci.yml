@@ -59,7 +59,7 @@ jobs:
           echo "Minor: ${{ steps.gitversion.outputs.minor }}"
           echo "Patch: ${{ steps.gitversion.outputs.patch }}"
           echo "MajorMinorPatch: ${{ steps.gitversion.outputs.MajorMinorPatch }}"
-          echo "SemVer: ${{ steps.gitversion.outputs.semvVer }}"
+          echo "SemVer: ${{ steps.gitversion.outputs.semVer }}"
           
       - name: Clean Install the dependencies
         run: npm ci
