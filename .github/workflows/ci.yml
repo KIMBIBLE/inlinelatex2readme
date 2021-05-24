@@ -40,15 +40,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - name: install gitversion tools
-        uses: gittools/actions/gitversion/setup@v0.9
+      
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
         with:
-          versionSpec: '5.1.x'
-        
+          versionSpec: '5.x'
+
       - name: execute gitversion
         id: gitversion # step id used as reference for output values
-        uses: gittools/actions/gitversion/execute@v0.9
+        uses: gittools/actions/gitversion/execute@v0.9.7
         
       - name: print gitversion
         run: |
