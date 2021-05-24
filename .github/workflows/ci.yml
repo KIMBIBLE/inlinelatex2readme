@@ -83,7 +83,7 @@ jobs:
         run: vsce package
         
       - name: Publish to VSCode Marketplace
-        if: github.ref == 'refs/heads/main
+        if: github.ref == 'refs/heads/main'
         run: vsce publish -p ${{ secrets.VSCE_PAT }}
 
       - name: create a release
