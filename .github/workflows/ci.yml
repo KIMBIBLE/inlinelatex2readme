@@ -35,6 +35,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: fetch all history and tags from all branches for gitversion
+        run: git fetch --prune --unshallow
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
