@@ -1,16 +1,18 @@
 # inlinelatex2readme
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/KIMBIBLE/inlinelatex2readme/CI) [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bbkim.inlinelatex2readme)](https://marketplace.visualstudio.com/items?itemName=bbkim.inlinelatex2readme)
+
 > Convert Latex Fomular to Inline Snippet for Github Readme File.
 
 
 <br/>
 
-## :pencil2: Usage
+## ✏️&ensp; Usage
 ---
 
 1. Select the latex code block which you want to convert to inline fomular.
 
-2. `Right-click` on the selected block and select `Generate Markdown Snippet` from the drop-down menus that appear.
+2. `Right-click` on the selected block and select `Convert Latex Formular To Markdown Snippet` from the drop-down menus that appear.
 
 3. Conversion is completed as follows.
 
@@ -44,11 +46,19 @@
 
 <br/>
 
-## :hourglass_flowing_sand: Release Notes
+## ⏳&ensp; Release Notes
 ---
 
-### 0.0.1
+### 0.1.x
 
-Initial release of inline latex snippet generator for github readme file.
+* `0.1.2`: Created a Github Action CI/CD pipeline for continuous deployment to the vscode extension marketplace.
 
+* `0.1.1`: Add Unit Test Logic.
+
+* `0.1.0`
+  * Fix bug for [Issue #1](https://github.com/KIMBIBLE/inlinelatex2readme/issues/1): An unwanted newline character is included in the generated inline formula link snippet.
+
+### 0.0.x
+
+* `0.0.1`: Initial release of inline latex snippet generator for github readme file.
 
