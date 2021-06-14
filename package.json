@@ -11,20 +11,30 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:inlinelatex2readme.convertMDSnippet"
+    "onCommand:inlinelatex2readme.convertMDSnippet",
+    "onCommand:inlinelatex2readme.revertMDSnippet"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "inlinelatex2readme.convertMDSnippet",
-        "title": "Convert Latex Formular To Markdown Snippet"
+        "title": "Convert Latex Formular to Markdown Snippet"
+      },
+      {
+        "command": "inlinelatex2readme.revertMDSnippet",
+        "title": "Revert Markdown Snippet to Original Latex Formular "
       }
     ],
     "menus": {
       "editor/context": [
         {
           "command": "inlinelatex2readme.convertMDSnippet",
+          "when": "editorHasSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "inlinelatex2readme.revertMDSnippet",
           "when": "editorHasSelection",
           "group": "navigation"
         }

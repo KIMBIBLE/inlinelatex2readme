@@ -3,7 +3,7 @@ import * as assert from 'assert';
 // You can import and use all API from the 'vscode' module
 // as well as import your extension to test it
 import * as vscode from 'vscode';
-import {SnippetGenerator} from '../../snippetGenerator';
+import {Snippet} from '../../snippetGenerator';
 
 suite('Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
@@ -18,11 +18,11 @@ suite('Extension Test Suite', () => {
 		}
 	];
 
-	suite('SnippetGenerator', () => {
+	suite('Snippet', () => {
 		test('should match string.', () => {
 			for(let formular of formulars) {
-				let snippetGenerator = new SnippetGenerator(formular.original);
-				let generatedSnippet = snippetGenerator.generate();
+				let MDsnippet = new Snippet(formular.original);
+				let generatedSnippet = MDsnippet.generate();
 
 				assert.strictEqual(generatedSnippet, formular.result);
 
