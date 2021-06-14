@@ -51,6 +51,8 @@
 
 ### 0.1.x
 
+* `0.1.3`: Update [Fomular Revert](https://github.com/KIMBIBLE/inlinelatex2readme/issues/6) Function .
+
 * `0.1.2`: Created a Github Action CI/CD pipeline for continuous deployment to the vscode extension marketplace.
 
 * `0.1.1`: Add Unit Test Logic.
